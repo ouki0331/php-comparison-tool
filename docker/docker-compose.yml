@@ -21,6 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: php84-env
     volumes:
+      # - ./php84/function_v2.php:/app/custom_functions.php
       - ../src:/app/src
       - ../output:/app/output
     working_dir: /app

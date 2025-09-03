@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     && docker-php-ext-install zip
-
+COPY function_v2.php /app/function.php
 # 安装 Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
