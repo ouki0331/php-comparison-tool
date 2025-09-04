@@ -3,12 +3,13 @@ version: '3.8'
 services:
   php72:
     build:
-      context: ./php72
+      context: ./docker/php72
       dockerfile: Dockerfile
     container_name: php72-env
     volumes:
-      - ../src:/app/src
-      - ../output:/app/output
+      - ./src:/app/src
+      - ./output:/app/output
+      # - ./src/tmp:/app/tmp
     working_dir: /app
     tty: true
     stdin_open: true
@@ -17,13 +18,14 @@ services:
 
   php84:
     build:
-      context: ./php84
+      context: ./docker/php84
       dockerfile: Dockerfile
     container_name: php84-env
     volumes:
       # - ./php84/function_v2.php:/app/custom_functions.php
-      - ../src:/app/src
-      - ../output:/app/output
+      - ./src:/app/src
+      - ./output:/app/output
+      # - ./src/tmp:/app/tmp
     working_dir: /app
     tty: true
     stdin_open: true
